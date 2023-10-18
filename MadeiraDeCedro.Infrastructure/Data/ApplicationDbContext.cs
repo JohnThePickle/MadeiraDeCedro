@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MadeiraDeCedro.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace MadeiraDeCedro.Infrastructure.Data
 {
@@ -9,6 +10,6 @@ namespace MadeiraDeCedro.Infrastructure.Data
 
         }
             
-    
+    public DbSet<Servicos> Serviços { get; set; }
     }
 }

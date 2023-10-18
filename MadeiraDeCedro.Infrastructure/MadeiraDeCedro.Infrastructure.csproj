@@ -18,4 +18,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MadeiraDeCedro.Domain\MadeiraDeCedro.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
