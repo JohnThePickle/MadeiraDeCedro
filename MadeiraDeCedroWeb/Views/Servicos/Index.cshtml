@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MadeiraDeCedro.Domain.Entities.Servicos>
+
+<h1>Lista de Serviços</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Madeira</th>
+            <th>Movel</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr>
+                <td>@obj.Nome</td>
+                <td>@obj.Descrição</td>
+                <td>@obj.Madeira</td>
+                <td>@obj.Movel</td>
+            </tr>
+        }
+    </tbody>
+</table>

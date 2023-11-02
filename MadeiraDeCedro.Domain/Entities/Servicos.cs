@@ -8,8 +8,6 @@
         public string? Madeira { get; set; } //Tipo de Madeira
         public string? Movel { get; set; } //Tipo de Movel
         public string? Imagem { get; set; } //ImageUrl
-        public DateTime? DataPedido { get; set; }
-        public DateTime? DataCriacao { get; set; } //Data da criação do Movel
 
     }
 }
