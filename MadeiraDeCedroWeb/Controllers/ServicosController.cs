@@ -22,15 +22,6 @@ namespace MadeiraDeCedroWeb.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult Create(Servicos obj)
-        {
-            if (ModelState.IsValid)
-            {
-                _db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(obj);
-        }
+
     }
 }
