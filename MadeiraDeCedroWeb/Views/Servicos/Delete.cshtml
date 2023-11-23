@@ -1,0 +1,50 @@
+﻿@model MadeiraDeCedro.Domain.Entities.Servicos
+<div class="w-100 card border-0 p-4">
+    <div class="card-header bg-success bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Apagar Serviço </h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body border-bottom p-4">
+        <form method="post" class="row">
+            <input asp-for="Id" hidden />
+            <div class="p-3">
+                <div class="form-floating py-1 col-12">
+                    <input asp-for="Nome" disabled class="form-control border-bottom box-shadow" />
+                    <label asp-for="Nome" class="ms-2"></label>
+                </div>
+                <div class="form-floating py-1 col-12">
+                    <input asp-for="Descrição" disabled class="form-control border-bottom box-shadow" />
+                    <label asp-for="Descrição" class="ms-2"></label>
+                </div>
+                <div class="form-floating py-1 col-12">
+                    <input asp-for="Madeira" disabled class="form-control border-bottom box-shadow" />
+                    <label asp-for="Madeira" class="ms-2"></label>
+                </div>
+                <div class="form-floating py-1 col-12">
+                    <input asp-for="Movel" disabled class="form-control border-bottom box-shadow" />
+                    <label asp-for="Movel" class="ms-2"></label>
+                </div>
+                <div class="form-floating py-1 col-12">
+                    <input asp-for="Imagem" disabled class="form-control border-bottom box-shadow" />
+                    <label asp-for="Imagem" class="ms-2"></label>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class="btn btn-danger w-100">
+                            <i class="bi bi-trash-fill"></i> Apagar
+                        </button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-action="Index" class="btn btn-secondary w-100">
+                            <i class="bi bi-x-circle"></i> Cancel
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

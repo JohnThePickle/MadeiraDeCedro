@@ -29,6 +29,7 @@ namespace MadeiraDeCedroWeb.Controllers
             {
                 _db.Servicos.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Sérviço criado com sucesso";
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -54,5 +55,30 @@ namespace MadeiraDeCedroWeb.Controllers
                 }
                 return View(obj);
             }
+        public ActionResult Delete(int ServicoId)
+        {
+            Servicos? obj = _db.Servicos.FirstOrDefault(u => u.Id == ServicoId);
+
+            if (obj == null)
+            {
+                return RedirectToAction("Error", "Home");
+            }
+            return View(obj);
+        }
+        [HttpPost]
+        public IActionResult Delete(Servicos obj)
+        {
+            Servicos? objFromDb = _db.Servicos.FirstOrDefault(u => u.Id == obj.Id);
+            if (objFromDb is not null)
+            {
+                _db.Servicos.Remove(objFromDb); 
+                _db.SaveChanges();
+                TempData["success"] = "Serviço apagado com sucesso";
+                return RedirectToAction("Index");
+            }
+            TempData["error"] = "O serviço não pode ser apagado";
+            return View(obj);
+        }
+
     }
 }
