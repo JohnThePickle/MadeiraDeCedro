@@ -22,4 +22,12 @@
     <ProjectReference Include="..\MadeiraDeCedro.Infrastructure\MadeiraDeCedro.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\imagens\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\favicon.ico" />
+  </ItemGroup>
+
 </Project>
