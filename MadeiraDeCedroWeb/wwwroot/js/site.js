@@ -1,41 +1,35 @@
-﻿let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-const totalSlides = slides.length;
-const dots = document.querySelectorAll('.dot');
+﻿document.querySelectorAll('.carousel-container').forEach(carousel => {
+    let currentSlide = 0;
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+    const dots = carousel.querySelectorAll('.dot');
 
-// Set up event listeners for buttons
-document.querySelector('.prev').addEventListener('click', () => {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    updateCarousel();
-});
+    const updateCarousel = () => {
+        slides.forEach((slide, index) => {
+            slide.style.transform = `translateX(-${currentSlide * 100}%)`;
+        });
 
-document.querySelector('.next').addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateCarousel();
-});
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    };
 
-// Set up event listeners for dots
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentSlide = index;
+    carousel.querySelector('.prev').addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
         updateCarousel();
     });
-});
 
-function updateCarousel() {
-    slides.forEach((slide, index) => {
-        slide.style.transform = `translateX(-${currentSlide * 100}%)`;
+    carousel.querySelector('.next').addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
     });
 
-    // Update dots
     dots.forEach((dot, index) => {
-        if (index === currentSlide) {
-            dot.classList.add('active');
-        } else {
-            dot.classList.remove('active');
-        }
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            updateCarousel();
+        });
     });
-}
 
-// Initialize the carousel
-updateCarousel();
+    updateCarousel(); // Initialize the carousel
+});

@@ -53,19 +53,21 @@ footer {
 .section-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 50px; /* Adjust as needed */
+
+    margin-bottom: 50px; 
+
 }
 
 .text-content, .instagram-embed {
+
     flex: 1;
     padding: 15px; /* Adjust as needed */
     text-align: left
 }
 
-.section-container alt-order {
+.section-container.alt-order {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     margin-bottom: 50px; /* Adjust as needed */
 
@@ -73,11 +75,13 @@ footer {
 }
 .carousel-container {
     display: flex;
+    flex: auto;
     position: relative;
     max-width: 540px; /* Adjust as needed */
     margin: auto;
     overflow: hidden; /* Hides anything outside this container */
     padding-bottom: 60px;
+    align-items: flex-end
 }
 
 
@@ -87,6 +91,7 @@ footer {
     align-items: center;
     justify-content: center;
     transition: transform 0.5s ease-in-out;
+    /*max-height:662px;*/
 }
 
 
